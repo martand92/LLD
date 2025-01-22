@@ -10,8 +10,7 @@ class Vehicle1 {
 class Car_DirectInstantiation {
 
 	// This Car class owns control of lifecycle of Vehicle class as its instantiated
-	// here
-	// Thigh coupling between car and vehicle class
+	// here resulting in tight coupling between car and vehicle class
 	Vehicle1 vehicle = new Vehicle1();
 
 }

@@ -1,6 +1,6 @@
 package _02_SOLID;
 
-interface saveInvoice {
+interface SaveInvoice {
 	public void save();
 }
 
@@ -15,34 +15,51 @@ interface saveInvoice {
  * with new concrete classes by extending interface and not by modifying
  * existing concrete classes
  */
-class saveInvoiceToDB implements saveInvoice {
+class SaveInvoiceToDB implements SaveInvoice {
 
 	String invoice;
 
-	public saveInvoiceToDB(String invoice) {
+	public SaveInvoiceToDB(String invoice) {
 		this.invoice = invoice;
 	}
 
 	@Override
 	public void save() {
-		System.out.println("Saving invoice to DB : " + invoice);
+		System.out.println(invoice);
 	}
 
 }
 
-class saveInvoiceToFile implements saveInvoice {
+/*
+ * If new requirement is to save to file then create another implementation of
+ * SaveInvoice abstraction and implement logic to save to file
+ */
+class SaveInvoiceToFile implements SaveInvoice {
 
 	String invoice;
 
-	public saveInvoiceToFile(String invoice) {
+	public SaveInvoiceToFile(String invoice) {
 		this.invoice = invoice;
 	}
 
 	@Override
 	public void save() {
-		System.out.println("Saving invoice to File : " + invoice);
+		System.out.println(invoice);
 	}
 
+}
+
+class SaveMechanism {
+
+	SaveInvoice saveInvoice;
+
+	SaveMechanism(SaveInvoice saveInvoice) {
+		this.saveInvoice = saveInvoice;
+	}
+
+	public void saveInvoice() {
+		saveInvoice.save();
+	}
 }
 
 /*
@@ -54,11 +71,17 @@ public class _02_02_OpenClosedPrinciple_Fix {
 
 	public static void main(String[] args) {
 
-		saveInvoiceToDB dbObj = new saveInvoiceToDB("invoice");
-		dbObj.save();
+		// Now if you want to save invoice to DB
+		SaveMechanism saveMechanismObj = new SaveMechanism(new SaveInvoiceToFile("invoice saving to DB"));
+		saveMechanismObj.saveInvoice();
 
-		saveInvoiceToFile fileObj = new saveInvoiceToFile("invoice");
-		fileObj.save();
+		// Now if you want to save invoice to File
+		saveMechanismObj = new SaveMechanism(new SaveInvoiceToFile("invoice saving to File"));
+		saveMechanismObj.saveInvoice();
+
+		// In future if you want to save invoice to any other persistence, then another
+		// implementation for same SaveInvoice Abstraction can be created and
+		// passed as object to save invoice to new persistence
 	}
 
 }

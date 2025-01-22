@@ -90,13 +90,13 @@ public class _05_01_DependencyInversion_Issue {
 	public static void main(String[] args) {
 
 		MacBook macbook = new MacBook(new WiredKeyboard(), new WiredMouse());// This MacBook tightly accepts only
-																				// WiredKeyboard
+																				// wiredkeyboard & wiredmouse
 
 		// If in future you want to have a Macbook with Bluetooth keyboard and mouse
 		// though they are available then this fails
 		// MacBook macbookNew = new MacBook(new BluetoothKeyboard(), new
 		// BluetoothMouse()); <- Compile time error as macbook cannot be created using
-		// bluetooth keyboard /mouse
+		// bluetooth keyboard/mouse
 	}
 
 }

@@ -8,13 +8,14 @@ class Vehicle {
 		this.type = "Generic Vehicle";
 	}
 
+	public String getType() {
+		return type;
+	}
+
 	public void move() {
 		System.out.println("The vehicle is moving");
 	}
 
-	public String getType() {
-		return type;
-	}
 }
 
 //Inheritance

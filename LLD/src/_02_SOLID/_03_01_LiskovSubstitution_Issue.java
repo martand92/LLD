@@ -60,9 +60,8 @@ public class _03_01_LiskovSubstitution_Issue {
 		motorCycle.turnOnEngine();
 
 		Bike cycle = new Bicycle();
-		cycle.turnOnEngine();// Now say client code calls the turnOnEngine on cycle as its provided by
-								// interface Bike and this will throw error. Hence, child class is not behaving
-								// as same as parent
+		cycle.turnOnEngine();// Now if client calls turnOnEngine with Bicycle obj referencing Bike, this will
+								// throw error. Hence, child class is not behaving as same as parent
 
 	}
 

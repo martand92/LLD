@@ -4,53 +4,45 @@ package _02_SOLID;
  * Then have another abstraction that contains removed method from previous abstraction and have respective specific subclasses inherit this abstraction */
 
 interface Bike1 {
-	// void turnOnEngine(); // removing this method from super class as this method
-	// is irrelevant to a subclass
 
+	// removing this method from super class as this method is irrelevant to all
+	// subclass
+
+	// void turnOnEngine();
 	void accelerate();
 }
 
-interface BikeWithEngine extends Bike1 { // previous removed method is added abstracted to this interface as its
+interface BikeWithEngine extends Bike1 { // previous removed method is abstracted to this interface as its
 											// irrelevant to all subclasses
 	void turnOnEngine();
 }
 
-class Motorcycle1 implements BikeWithEngine {
-
+class Motorcycle1 implements BikeWithEngine { // Now Motorcycle inherits from more specific abstraction than generic
+												// abstraction. This way we can avoid downcasting
 	boolean isEngineOn;
 	int speed;
 
 	@Override
 	public void turnOnEngine() {
-		// TODO Auto-generated method stub
 		isEngineOn = true;
 
 	}
 
 	@Override
 	public void accelerate() {
-		// TODO Auto-generated method stub
 		speed += 10;
 	}
 
 }
 
-// As Bicycle doesn't have an engine it inherits from Bike1 interface to
-// accelerate
+// As Bicycle doesn't have an engine it inherits from Bike1 interface and avoid the need to override unnecessary methods
 class Bicycle1 implements Bike1 {
 
-	// Belos method which was causing issue previously is resolved when this child
-	// will now behave like parent (Bike1)
-//	@Override
-//	public void turnOnEngine() {
-//		// TODO Auto-generated method stub
-//		throw new AssertionError("there is no engine");
-//	}
+	int speed;
 
 	@Override
 	public void accelerate() {
-		// TODO Auto-generated method stub
-
+		speed += 5;
 	}
 
 }
@@ -64,9 +56,5 @@ public class _03_02_LiskovSubstitution_Fix {
 
 		Bike1 cycle = new Bicycle1();
 		cycle.accelerate();
-		// cycle.turnOnEngine(); -> Throws compile time error as this method is no more
-		// available for client
-
 	}
-
 }

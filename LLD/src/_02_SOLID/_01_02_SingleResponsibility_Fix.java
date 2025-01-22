@@ -33,8 +33,7 @@ class Invoice1 {
 		this.quantity = quantity;
 	}
 
-	// Below are the 3 reasons to modify this class :
-	public int calculatorTotal() {// 1st reason : If logic to calculate total price of marker changes
+	public int calculatorTotal() {
 		int price = (marker.price) * this.quantity;
 		return price;
 	}
@@ -52,7 +51,6 @@ class SaveToDB {
 	public void saveToDB() {
 		System.out.println("Saving invoice to DB : " + invoice);
 	}
-
 }
 
 class PrintInvoice {
@@ -63,7 +61,7 @@ class PrintInvoice {
 		this.invoice = invoice;
 	}
 
-	public void printInvoice() { // 2nd reason : If printing logic changes
+	public void printInvoice() {
 		System.out.println("Printing Invoice : " + invoice);
 	}
 }
@@ -73,19 +71,16 @@ public class _01_02_SingleResponsibility_Fix {
 	public static void main(String[] args) {
 
 		Marker1 marker = new Marker1("markername", "markerColor", 2015, 10);
+
 		Invoice1 invoice = new Invoice1(marker, 5);
 		invoice.calculatorTotal();
 
 		SaveToDB db = new SaveToDB(invoice);
 		db.saveToDB();
 
-		PrintInvoice invoiceObj = new PrintInvoice(invoice);
-		invoiceObj.printInvoice();
+		PrintInvoice print = new PrintInvoice(invoice);
+		print.printInvoice();
 	}
-
 }
 
-/*
- * Advantages : Easy to maintain : As only single respective class need to be
- * updated to maintain
- */
+//Advantages : Easy to maintain : As only single respective class need to be updated to maintain
