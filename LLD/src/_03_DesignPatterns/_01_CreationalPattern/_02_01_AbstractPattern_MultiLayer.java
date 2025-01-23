@@ -1,5 +1,7 @@
 package _03_DesignPatterns._01_CreationalPattern;
 
+
+//Abstract factory with factory layer (Multi layer)
 interface Dialog {
 	public void renderDialog();
 }
@@ -85,7 +87,7 @@ class MacAbstractFactory implements AbstractFactory {
 
 	@Override
 	public DialogFactory getDialogFactory() {
-		return new MacDialogFactory();
+		return new MacDialogFactory(); //Returns factory
 	}
 
 	@Override
@@ -124,7 +126,7 @@ class AbstractFactoryRegistry {
 }
 
 //Client code
-public class _02_01_AbstractPattern {
+public class _02_01_AbstractPattern_MultiLayer {
 
 	public static void main(String[] args) {
 
