@@ -24,6 +24,9 @@ final class Singleton {
 	// Making instance static to access without creating object for this class
 	private static Singleton instance;
 
+	// above can also be made as final but requires initialization at this step
+	// private static final Singleton instance = new Singleton();
+
 	// Make the constructor private to prevent instantiation from other classes
 	private Singleton() {
 	}
