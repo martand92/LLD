@@ -35,7 +35,7 @@ class CollegeStudent implements Student {
 	}
 }
 
-// Assuming this class is different than what client expects
+// this class to be returned in client's expectation format
 class SchoolStudent {
 
 	String firstName;
@@ -61,6 +61,7 @@ class SchoolStudent {
 	}
 }
 
+//Adapter to accept incompatible objects and return in client expected type
 class StudentAdapter implements Student {
 
 	SchoolStudent student;

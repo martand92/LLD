@@ -1,0 +1,69 @@
+package _03_DesignPatterns._02_StructuralPattern;
+
+import java.util.*;
+
+interface FileComponent {
+	public void showDetails();
+}
+
+class File implements FileComponent {
+
+	String name;
+	String size;
+
+	File(String name, String size) {
+		this.name = name;
+		this.size = size;
+	}
+
+	@Override
+	public void showDetails() {
+		System.out.println("File name : " + name + ", File size : " + size);
+	}
+}
+
+//Composite
+class Directory implements FileComponent {
+
+	List<FileComponent> files = new ArrayList<FileComponent>();
+
+	public void addFile(FileComponent file) {
+		files.add(file);
+	}
+
+	public void removeFile(FileComponent file) {
+		files.remove(file);
+	}
+
+	@Override
+	public void showDetails() {
+		for (FileComponent file : files) {
+			file.showDetails();
+		}
+	}
+}
+
+public class _05_02_CompositePattern {
+
+	public static void main(String[] args) {
+
+		// Components / leaves
+		FileComponent file1 = new File("File1", "size1");
+		FileComponent file2 = new File("File2", "size2");
+
+		// Composite to which components are added
+		Directory directory1 = new Directory();
+		directory1.addFile(file1);
+		directory1.addFile(file2);
+
+		FileComponent file3 = new File("File3", "size3");
+		Directory directory2 = new Directory();
+		directory2.addFile(file3);
+		directory2.addFile(file2);
+
+		// Housing above Directories in another Root directory
+		Directory rootDir = new Directory();
+		rootDir.addFile(directory1);
+		rootDir.addFile(directory2);
+	}
+}
