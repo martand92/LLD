@@ -48,9 +48,7 @@ public class _04_BridgePattern {
 	public static void main(String[] args) {
 
 		// Coding for abstraction
-		Device tv = new TV();
-		Remote tvRemote = new TVRemote(tv);
-
+		Remote tvRemote = new TVRemote(new TV());
 		tvRemote.powerOn();
 		tvRemote.powerOff();
 	}

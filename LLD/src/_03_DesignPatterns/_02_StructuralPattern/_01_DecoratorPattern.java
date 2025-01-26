@@ -20,7 +20,6 @@ class Espresso extends Beverage {
 
 abstract class BeverageDecorator extends Beverage {// Decorator extends Beverage to add/modify original
 													// beverage obj
-
 	Beverage beverage;
 
 	BeverageDecorator(Beverage beverage) { // Decorator is expecting created object to decorate
