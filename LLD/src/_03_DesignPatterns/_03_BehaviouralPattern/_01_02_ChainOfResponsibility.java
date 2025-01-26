@@ -84,7 +84,7 @@ class ChainingResponsibilities {
 	}
 }
 
-public class _01_ChainOfResponsibility {
+public class _01_02_ChainOfResponsibility {
 
 	public static void main(String[] args) {
 

@@ -103,7 +103,7 @@ class Remote {
 	}
 }
 
-public class _02_CommandPattern {
+public class _02_02_CommandPattern {
 
 	public static void main(String[] args) {
 

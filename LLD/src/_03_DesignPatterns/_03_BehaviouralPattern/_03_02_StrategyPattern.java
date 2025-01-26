@@ -34,7 +34,7 @@ class Application {
 	}
 }
 
-public class _03_StrategyPattern {
+public class _03_02_StrategyPattern {
 
 	public static void main(String[] args) {
 
