@@ -9,12 +9,14 @@ class Circle1 implements Shape {
 	@Override
 	public void draw() {
 		System.out.println("Drawing circle");
+		System.out.println();
 	}
 }
 
 class Proxy implements Shape {
 
-	Shape circle;
+	static Shape circle; // if same object need to be shared across multiple proxies then make this
+							// object static
 	String key;
 
 	Proxy(String key) {
@@ -28,7 +30,7 @@ class Proxy implements Shape {
 		if (circle == null)
 			circle = new Circle1();
 
-		System.out.println(circle.hashCode());
+		System.out.println("circle obj hash :" + circle.hashCode());
 
 		if (isKeyValid(key))
 			circle.draw();
@@ -54,15 +56,5 @@ public class _07_ProxyPattern {
 		proxy1.draw();// As new proxy instance is created, for this proxy obj it creates its own new
 						// Circle obj.
 
-		/*
-		 * If same initially created Circle need to be used across multiple proxy
-		 * objects, then make Circle object as Static
-		 * 
-		 * class Proxy implements Shape {
-		 * 
-		 * static Shape circle; // Shared circle instance
-		 * 
-		 * }
-		 */
 	}
 }

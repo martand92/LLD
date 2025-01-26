@@ -51,7 +51,7 @@ final class ShapeManager {
 	}
 }
 
-public class _03_02_SingleTonPattern {
+public class _03_02_SingletonPattern {
 
 	public static void main(String[] args) {
 

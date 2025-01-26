@@ -37,10 +37,16 @@ class FlyweightFactory {
 	private static final HashMap<String, Ball> ballMap = new HashMap<String, Ball>();
 
 	// Create balls with required colors and cache them, if already present then
-	// return
+	// return. No new objects are created
 	public static Ball getBall(String color) {
+		
+		if (ballMap.get(color) != null)
+			System.out.println("Already present");
 
-		return ballMap.getOrDefault(color, new Ball(color));
+		else
+			ballMap.put(color, new Ball(color));
+
+		return ballMap.get(color);
 	}
 }
 
@@ -59,6 +65,12 @@ public class _06_FlyweightPattern {
 		purpleBall.setSize(10);
 		purpleBall.setCoordinates("x=2, y=3");
 		purpleBall.build();
+
+		// Now if you want another greenBall, it wont create new green ball object but
+		// returns from the cached
+		Ball greenBall1 = FlyweightFactory.getBall("Green");
+		System.out.println(greenBall.hashCode() == greenBall1.hashCode());
+
 	}
 
 }

@@ -45,7 +45,7 @@ final class Singleton {
 	}
 }
 
-public class _03_01_SingleTonPattern {
+public class _03_01_SingletonPattern {
 
 	public static void main(String[] args) {
 

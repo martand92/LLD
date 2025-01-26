@@ -35,7 +35,7 @@ class CollegeStudent implements Student {
 	}
 }
 
-// this class to be returned in client's expectation format
+// this class to be returned in client's expected format
 class SchoolStudent {
 
 	String firstName;
