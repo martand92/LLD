@@ -29,8 +29,8 @@ class HTMLFactory implements Factory {
 	@Override
 	public Button createButton() {
 		return new HTMLButton();
-		// button.render(); -> commenting cz it not responsibility of factory to
-		// interact with concrete classes
+		// button.render(); commenting cz its not responsibility of factory to interact
+		// with concrete classes
 	}
 }
 
