@@ -43,7 +43,7 @@ public class _04_02_AvoidDownCasting {
 
 	public static void main(String[] args) {
 
-		Bark dog = new Dog2(); // More specific abstraction for Dog
+		Bark dog = new Dog2(); // Now asking objects to be of more specific
 		Whisper cat = new Cat2();
 
 		dog.sound();
