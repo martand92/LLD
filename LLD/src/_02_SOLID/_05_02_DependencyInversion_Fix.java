@@ -13,28 +13,22 @@ class WiredKeyboard1 implements Keyboard1 {
 
 	@Override
 	public void usingKeyboard() {
-		// TODO Auto-generated method stub
 		System.out.println("Using wired keyboard");
-
 	}
-
 }
 
 class WiredMouse1 implements Mouse1 {
 
 	@Override
 	public void usingMouse() {
-		// TODO Auto-generated method stub
 		System.out.println("Using wired mouse");
 	}
-
 }
 
 class BluetoothKeyboard1 implements Keyboard1 {
 
 	@Override
 	public void usingKeyboard() {
-		// TODO Auto-generated method stub
 		System.out.println("Using bluetooth keyboard");
 	}
 }
@@ -43,7 +37,6 @@ class BluetoothMouse1 implements Mouse1 {
 
 	@Override
 	public void usingMouse() {
-		// TODO Auto-generated method stub
 		System.out.println("Using bluetooth mouse");
 	}
 }
@@ -90,7 +83,7 @@ public class _05_02_DependencyInversion_Fix {
 
 /*
  * High level class MacBook is now not dependent on low level modules but on
- * Abstraction (Keyboard and Mouse interface) Low level modules (WiredKeyboard ,
- * WiredMouse, BluetoothKeyboard, BluetoothMouse) are also dependent on
- * Abstraction
+ * Abstraction (Keyboard and Mouse interface) of low level modules. Low level
+ * modules (WiredKeyboard, WiredMouse, BluetoothKeyboard, BluetoothMouse) are
+ * also dependent on Abstraction
  */

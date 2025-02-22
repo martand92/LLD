@@ -5,15 +5,12 @@ package _02_SOLID;
 
 interface Bike1 {
 
-	// removing this method from super class as this method is irrelevant to all
-	// subclass
-
-	// void turnOnEngine();
+	// void turnOnEngine();// removing this as its irrelevant to all subclass
 	void accelerate();
 }
 
-interface BikeWithEngine extends Bike1 { // previous removed method is abstracted to this interface as its
-											// irrelevant to all subclasses
+interface BikeWithEngine extends Bike1 { // removed method could either be abstracted to another interface or directly
+											// added to resp subclass if not used by multiple classes
 	void turnOnEngine();
 }
 

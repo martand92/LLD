@@ -43,13 +43,13 @@ public class _04_02_AvoidDownCasting {
 
 	public static void main(String[] args) {
 
-		Bark dog = new Dog2(); // Now asking objects to be of more specific
+		Bark dog = new Dog2(); // Now asking objects to be of more specific. If ref is Animal again, then
+								// throws compilation error while calling bark()
 		Whisper cat = new Cat2();
 
 		dog.sound();
 		cat.sound();
 
 		dog.bark();
-
 	}
 }

@@ -1,6 +1,6 @@
 package _01_OOPS;
 
-class Vehicle2 {
+abstract class Vehicle2 {
 	public void start() {
 		System.out.println("Vehicle started");
 	}

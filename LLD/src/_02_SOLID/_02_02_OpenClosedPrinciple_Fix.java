@@ -72,7 +72,7 @@ public class _02_02_OpenClosedPrinciple_Fix {
 	public static void main(String[] args) {
 
 		// Now if you want to save invoice to DB
-		SaveMechanism saveMechanismObj = new SaveMechanism(new SaveInvoiceToFile("invoice saving to DB"));
+		SaveMechanism saveMechanismObj = new SaveMechanism(new SaveInvoiceToDB("invoice saving to DB"));
 		saveMechanismObj.saveInvoice();
 
 		// Now if you want to save invoice to File

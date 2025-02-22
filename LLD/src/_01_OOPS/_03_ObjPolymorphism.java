@@ -22,7 +22,7 @@ class Cat extends Animal {
 	}
 }
 
-public class _03_ObjPolymorphism_DynamicMethodDispatch {
+public class _03_ObjPolymorphism {
 
 	public static void main(String[] args) {
 		// Polymorphic behavior: Reference of type Animal but object is created specific
