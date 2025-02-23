@@ -1,5 +1,6 @@
 package _03_DesignPatterns._01_CreationalPattern;
 
+//immutable class
 class User {
 
 	// All final attributes
