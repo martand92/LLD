@@ -83,6 +83,7 @@ class User1 {
 	}
 }
 
+//Class that creates multiple objects with builder pattern 
 class UserDirector {
 
 	public User constructSimpleUser(String firstName, String lastName) {
@@ -98,6 +99,7 @@ class UserDirector {
 public class _04_02_BuilderPattern_Director {
 
 	public static void main(String[] args) {
+
 		UserDirector director = new UserDirector();
 
 		User simpleUser = director.constructSimpleUser("John", "Doe");
@@ -105,9 +107,7 @@ public class _04_02_BuilderPattern_Director {
 
 		User fullUser = director.constructFullUser("Jane", "Smith", 30, "123-456-7890", "jane.smith@example.com");
 		System.out.println(fullUser);
-
 	}
-
 }
 
 /*

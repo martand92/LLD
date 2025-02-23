@@ -30,7 +30,7 @@ final class ShapeManager {
 	private static ShapeManager instance;
 
 	// Private field to track the number of shapes drawn
-	private int shapeCount = 0;
+	private int shapeCount = 0;// shapeCount does not need to be static as only 1 instance would ever exist
 
 	private ShapeManager() {
 	}
@@ -45,7 +45,7 @@ final class ShapeManager {
 	}
 
 	// Method to increment the shape count thats global
-	public void shapeDrawn() {
+	void shapeDrawn() {
 		shapeCount++;
 		System.out.println("Shape drawn! Total shapes: " + shapeCount);
 	}
@@ -55,7 +55,7 @@ public class _03_02_SingletonPattern {
 
 	public static void main(String[] args) {
 
-		ShapeManager shapeManager = ShapeManager.getInstance();
+		// ShapeManager shapeManager = ShapeManager.getInstance();
 
 		Shape1 circle = new Circle1();
 		Shape1 square = new Square1();

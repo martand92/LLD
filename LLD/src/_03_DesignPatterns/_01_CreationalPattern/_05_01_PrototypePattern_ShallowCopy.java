@@ -1,9 +1,14 @@
 package _03_DesignPatterns._01_CreationalPattern;
 
+import java.util.Arrays;
+
 class Shape2 implements Cloneable {
+
 	private String type;
 	private String color;
 	private double size;
+
+	int[] arr = { 1, 2, 3 };
 
 	public Shape2(String type, String color, double size) {
 		this.type = type;
@@ -15,14 +20,6 @@ class Shape2 implements Cloneable {
 		this.type = type;
 	}
 
-	public void setColor(String color) {
-		this.color = color;
-	}
-
-	public void setSize(double size) {
-		this.size = size;
-	}
-
 	@Override
 	public Shape2 clone() throws CloneNotSupportedException {
 		return (Shape2) super.clone();
@@ -30,12 +27,15 @@ class Shape2 implements Cloneable {
 
 	@Override
 	public String toString() {
-		return "type:" + this.type + " color:" + this.color + " size:" + this.size;
+		return "type:" + this.type + " color:" + this.color + " size:" + this.size + " arr:"
+				+ Arrays.toString(this.arr);
 	}
 }
 
 public class _05_01_PrototypePattern_ShallowCopy {
+
 	public static void main(String[] args) throws CloneNotSupportedException {
+
 		Shape2 circle = new Shape2("Circle", "Red", 10.0);
 		Shape2 clonedCircle = circle.clone();
 
@@ -44,10 +44,16 @@ public class _05_01_PrototypePattern_ShallowCopy {
 
 		System.out.println();
 
-		// Now updating properties of initial object's primitive type : String
+		// Updating primitive property of Original object wont affect clonedObj
 		circle.setType("Circle1");
-		System.out.println("Updating Circle : " + circle);
-		System.out.println("Cloned Circle : " + clonedCircle);// Will continue to hold original val as String is
-																// primitive
+		System.out.println("Original Obj- " + circle);
+		System.out.println("Cloned Obj- " + clonedCircle);// ClonedObj will hold original primitive val
+
+		// Updating non-primitive property of Original object also updates in Cloned Obj
+		circle.arr[0] = 4;
+		System.out.println();
+		System.out.println("After Updating non-primitve type in only Original object");
+		System.out.println("Original Obj- " + circle);
+		System.out.println("Cloned Obj- " + clonedCircle);
 	}
 }

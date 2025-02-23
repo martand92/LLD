@@ -60,7 +60,7 @@ public class _03_01_SingletonPattern {
 
 		// Verifying that only one instance of ShapeManager exists
 		Singleton anotherSingleton = Singleton.getInstance();
-		System.out.println(singleton == anotherSingleton); // Output: true
+		System.out.println(singleton.hashCode() == anotherSingleton.hashCode()); // Output: true
 
 	}
 
