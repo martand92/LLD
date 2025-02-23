@@ -98,3 +98,11 @@ public class _04_01_BuilderPattern {
 	}
 
 }
+
+/*
+ * Here builder class is inner class to main class. This provides better
+ * encapsulation (by making main class in-accessible)
+ * 
+ * But builder class can also be made standalone in same package or have it in
+ * separate package
+ */

@@ -126,7 +126,7 @@ class AbstractFactoryRegistry {
 }
 
 //Client code
-public class _02_01_AbstractPattern_MultiLayer {
+public class _02_01_AbstractFactoryPattern_MultiLayer {
 
 	public static void main(String[] args) {
 

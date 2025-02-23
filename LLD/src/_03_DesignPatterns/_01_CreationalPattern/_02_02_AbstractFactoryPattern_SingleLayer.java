@@ -81,7 +81,7 @@ class Application {
 	}
 }
 
-public class _02_02_AbstractPattern_SingleLayer {
+public class _02_02_AbstractFactoryPattern_SingleLayer {
 	public static void main(String[] args) {
 		Application app = new Application(new MacFactory());// Could switch to WindowsFactory dynamically
 		app.renderUI();
