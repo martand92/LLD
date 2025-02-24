@@ -32,14 +32,15 @@ class Ball implements Game {
 	}
 }
 
-class FlyweightFactory {
+//Factory that creates Ball objects if not cached and cache them
+class BallFactory {
 
 	private static final HashMap<String, Ball> ballMap = new HashMap<String, Ball>();
 
 	// Create balls with required colors and cache them, if already present then
 	// return. No new objects are created
 	public static Ball getBall(String color) {
-		
+
 		if (ballMap.get(color) != null)
 			System.out.println("Already present");
 
@@ -56,19 +57,19 @@ public class _06_FlyweightPattern {
 
 		// Flyweight object. Receive required ball from factory if present else create
 		// and add to factory
-		Ball greenBall = FlyweightFactory.getBall("Green"); // Client is required to specify intrinsic properties
+		Ball greenBall = BallFactory.getBall("Green"); // Client is required to specify intrinsic properties
 		greenBall.setSize(5);// then add additional properties to received ball
 		greenBall.setCoordinates("x=4, y=5");
 		greenBall.build();
 
-		Ball purpleBall = FlyweightFactory.getBall("Purple");
+		Ball purpleBall = BallFactory.getBall("Purple");
 		purpleBall.setSize(10);
 		purpleBall.setCoordinates("x=2, y=3");
 		purpleBall.build();
 
 		// Now if you want another greenBall, it wont create new green ball object but
 		// returns from the cached
-		Ball greenBall1 = FlyweightFactory.getBall("Green");
+		Ball greenBall1 = BallFactory.getBall("Green");
 		System.out.println(greenBall.hashCode() == greenBall1.hashCode());
 
 	}

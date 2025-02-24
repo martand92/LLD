@@ -49,12 +49,10 @@ public class _07_ProxyPattern {
 
 		Shape proxy = new Proxy("key");
 		proxy.draw();
-		proxy.draw();// Same circle initially created will be used to carry operations in multiple
-						// proxy calls
+		proxy.draw();// same Circle obj initially created will be used in multiple proxy calls
 
 		Shape proxy1 = new Proxy("key");
-		proxy1.draw();// As new proxy instance is created, for this proxy obj it creates its own new
-						// Circle obj.
+		proxy1.draw();// As new proxy instance is created, it creates its own new Circle obj.
 
 	}
 }
