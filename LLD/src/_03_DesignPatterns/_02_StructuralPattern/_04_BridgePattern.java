@@ -1,5 +1,16 @@
 package _03_DesignPatterns._02_StructuralPattern;
 
+/* With Bridge pattern :
+ * 
+ * No need to create every combination of Abstraction and Implementor. 
+ * Need to create 1 hierarchy of high-level Abstraction and 1 hierarchy of low-level Implementor
+ * 
+ *  Using composition, any combination of abstraction and implementor can be created in runtime
+ *  
+ *  Both Abstraction and Implementor can vary independently
+ * */
+
+//Abstraction
 abstract class Remote {
 
 	Device device;
@@ -24,6 +35,7 @@ class TVRemote extends Remote {
 	}
 }
 
+//Implementor
 abstract class Device {
 	public abstract void switchOn();
 
@@ -47,15 +59,14 @@ public class _04_BridgePattern {
 
 	public static void main(String[] args) {
 
-		// Coding for abstraction
-		Remote tvRemote = new TVRemote(new TV());
+		Remote tvRemote = new TVRemote(new TV());// Coding to Abstraction
 		tvRemote.powerOn();
 		tvRemote.powerOff();
 	}
 }
 
 /*
- * By using the Bridge Pattern, you can create different types of remotes (e.g.,
- * RadioRemote, ACRemote) that can control different types of devices (e.g.,
- * Radio, AC) without modifying the Remote class itself.
+ * Here, you can create different types of remote (e.g., RadioRemote, ACRemote)
+ * that can control different types of devices (e.g., Radio, AC) without
+ * modifying the Remote class itself.
  */

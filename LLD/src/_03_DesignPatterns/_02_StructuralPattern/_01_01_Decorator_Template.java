@@ -27,6 +27,7 @@ class Decorator implements Component1 {
 
 //Concrete decorator adds behavior
 class ConcreteDecorator extends Decorator {
+
 	public ConcreteDecorator(Component1 component) {
 		super(component);
 	}
@@ -39,6 +40,7 @@ class ConcreteDecorator extends Decorator {
 }
 
 public class _01_01_Decorator_Template {
+
 	public static void main(String[] args) {
 		Component1 decorated = new ConcreteDecorator(new ConcreteComponent());
 		decorated.operation();

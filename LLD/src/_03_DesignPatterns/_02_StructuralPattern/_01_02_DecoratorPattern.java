@@ -62,13 +62,16 @@ public class _01_02_DecoratorPattern {
 
 	public static void main(String[] args) {
 
+		// Base obj
 		Beverage espresso = new Espresso("Espresso");
 		System.out.println(espresso.name + " costs " + espresso.getCost());
 
+		// Decorating over base obj
 		Beverage mocha = new Mocha(espresso); // Creating new decorated obj of type Beverage by passing original obj
 		System.out.println(mocha.name + " costs " + mocha.getCost());
 
-		Beverage xyz = new XYZ(mocha);// Decorator over existing decorator
+		// Adding decoration over above decorator
+		Beverage xyz = new XYZ(mocha);
 		System.out.println(xyz.name + " costs " + xyz.getCost());
 
 		System.out.println(espresso.name);

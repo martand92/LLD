@@ -1,6 +1,6 @@
 package _03_DesignPatterns._02_StructuralPattern;
 
-// This class is expected by Client
+// Target Interface : Client expected type
 interface Student {
 
 	public String getName();
@@ -10,32 +10,7 @@ interface Student {
 	public String getEmail();
 }
 
-class CollegeStudent implements Student {
-
-	String name;
-	String surname;
-	String email;
-
-	CollegeStudent(String name, String surname, String email) {
-		this.name = name;
-		this.surname = surname;
-		this.email = email;
-	}
-
-	public String getName() {
-		return this.name;
-	}
-
-	public String getSurname() {
-		return this.surname;
-	}
-
-	public String getEmail() {
-		return this.email;
-	}
-}
-
-// this class to be returned in client's expected format
+// Legacy / adaptee class : Need to return as Student type
 class SchoolStudent {
 
 	String firstName;
@@ -64,7 +39,7 @@ class SchoolStudent {
 //Adapter to accept incompatible objects and return in client expected type
 class StudentAdapter implements Student {
 
-	SchoolStudent student;
+	SchoolStudent student;// Composition
 
 	StudentAdapter(SchoolStudent student) {
 		this.student = student;
@@ -84,20 +59,25 @@ class StudentAdapter implements Student {
 	public String getEmail() {
 		return student.getEmailAddress();
 	}
-
 }
 
-public class _03_AdapterPattern {
+public class _03_02_AdapterPattern_Composition {
 
 	public static void main(String[] args) {
-
-		Student student = new CollegeStudent("a", "b", "c");
-		// Student student1 = new SchoolStudent("a", "b", "c"); compilation error as
-		// SchoolStudent is not type of Student which client expects
-
-		// So make SchoolStudent adhere to Student type using adapter
+		// So make Legacy class SchoolStudent adhere to type Student using Adapter
 		Student schoolStudent = new StudentAdapter(new SchoolStudent("x", "y", "z"));
 		System.out.println(schoolStudent.getEmail());
-		// Now school student object returned as student
 	}
 }
+
+/*
+ * Advantages :
+ * 
+ * Can work with different adaptees. Cz of compostion, can inject any adaptee
+ * 
+ * Supports multiple adaptees : Cz of
+ * 
+ * Loose coupling : Any adaptee can be injected as adapter has composition for
+ * parent
+ * 
+ */
