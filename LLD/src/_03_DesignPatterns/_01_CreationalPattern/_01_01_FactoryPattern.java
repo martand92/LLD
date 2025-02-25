@@ -22,6 +22,7 @@ class WindowsButton implements Button {
 
 //Sole purpose of factory is to only produce and return concrete objects. Single responsibility principle
 interface Factory {
+	// Factory Method that creates object
 	public Button createButton();
 }
 
@@ -64,6 +65,10 @@ public class _01_01_FactoryPattern {
 		// Below implementation provides runtime polymorphism with FactoryImpl class
 		// where client in runtime decides which factory to call to get required
 		// concrete obj
+
+		// Also this is Factory Method Pattern where required object by calling create
+		// method of a class
+
 		Factory htmlFactory = new FactoryImpl(new HTMLFactory());
 		Button htmlButton = htmlFactory.createButton(); // Receives concrete obj from respective Factory's call
 		htmlButton.render(); // client once receives required obj using factory will then interact with obj's
@@ -93,4 +98,7 @@ public class _01_01_FactoryPattern {
  * 
  * The client can work with the Factory interface without needing to know the
  * specific subclass (e.g., HTMLFactory, WindowsFactory).
+ * 
+ * This is Factory Method pattern that has create() to create an instance
+ * Concrete Factories extend Factory class and implement create()
  */

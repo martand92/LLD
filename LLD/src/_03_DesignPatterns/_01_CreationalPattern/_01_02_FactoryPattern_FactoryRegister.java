@@ -45,7 +45,7 @@ class WindowsFactory1 implements Factory1 {
 	}
 }
 
-//FactoryRegistry
+//FactoryRegistry. This pattern is known as Simple Factory
 class FactoryRegistry {
 
 	public static Factory1 getFactory(String type) {
@@ -69,6 +69,8 @@ public class _01_02_FactoryPattern_FactoryRegister {
 
 	public static void main(String[] args) {
 
+		// This conditioned based factory resolution is Simple Factory pattern
+		// It's anti-pattern cz client should know the condition to create required obj
 		Factory1 htmlFactory = FactoryRegistry.getFactory("HTML");
 		htmlFactory.createButton().render();
 
