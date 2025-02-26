@@ -1,5 +1,7 @@
 package _03_DesignPatterns._03_BehaviouralPattern;
 
+//In command pattern, objectifying request/operation
+
 interface Receiver {
 
 	public void executeRequest();
@@ -7,6 +9,7 @@ interface Receiver {
 	public void unexecuteRequest();
 }
 
+//implement a bunch of command classes for every possible operation
 interface Command1 {
 
 	public void execute();
@@ -40,9 +43,9 @@ class ConcreteReceiver2 implements Receiver {
 	}
 }
 
-class ExecuteCommand implements Command1 {
+class ExecuteCommand implements Command1 { // Like TurnOn Light
 
-	Receiver receiver;
+	Receiver receiver; // Required bulb can be attached
 
 	ExecuteCommand(Receiver receiver) {
 		this.receiver = receiver;
@@ -96,6 +99,11 @@ class Invoker {
 	}
 }
 
+/*
+ * Client invokes invoker -> Invoker attaches command -> and command
+ * execute/unexecute request on receiver
+ */
+
 public class _02_02_CommandPattern_Template {
 
 	public static void main(String[] args) {
@@ -126,3 +134,13 @@ public class _02_02_CommandPattern_Template {
 
 	}
 }
+
+/*
+ * Encapsulates the request – Commands wrap requests (Ex: TurnOnCommand,
+ * TurnOffCommand).
+ * 
+ * Decouples sender from receiver – Invoker doesn’t know about Receiver, it only
+ * calls Command's execute() / unexecute().
+ * 
+ * Supports Undo/Redo & Queuing – Commands can be stored, logged, or undone.
+ */

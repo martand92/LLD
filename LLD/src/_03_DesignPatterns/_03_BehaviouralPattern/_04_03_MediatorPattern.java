@@ -2,12 +2,12 @@ package _03_DesignPatterns._03_BehaviouralPattern;
 
 import java.util.*;
 
-interface Receiver { // Component
+interface Receiver2 { // Component
 	public void displayMessage(String message);
 }
 
 //End object with which original object is trying to communicate
-class ReceiverImpl implements Receiver {
+class ReceiverImpl implements Receiver2 {
 
 	String name;
 
@@ -27,23 +27,22 @@ interface Mediator {
 
 class MediatorImpl implements Mediator {
 
-	List<Receiver> receivers = new ArrayList<Receiver>(); // Mediator can also help with publish-subscribe
+	List<Receiver2> receivers = new ArrayList<Receiver2>(); // Mediator can also help with publish-subscribe
 
-	public void addReceivers(Receiver receiver) {
+	public void addReceivers(Receiver2 receiver) {
 		receivers.add(receiver);
 	}
 
 	@Override
 	public void sendMessage(String message) {
-		for (Receiver receiver : receivers)
+		for (Receiver2 receiver : receivers)
 			receiver.displayMessage(message);
 	}
 }
 
 class Sender { // Component
 
-	Mediator mediator; // As long as the component works with its mediator via the generic interface,
-						// you can link the component with a different implementation of the mediator
+	Mediator mediator; // Any concrete Mediator can be attached to Sender
 
 	Sender(Mediator mediator) {
 		this.mediator = mediator;
@@ -54,7 +53,7 @@ class Sender { // Component
 	}
 }
 
-public class _04_02_MediatorPattern {
+public class _04_03_MediatorPattern {
 
 	public static void main(String[] args) {
 
@@ -65,7 +64,6 @@ public class _04_02_MediatorPattern {
 		Sender sender = new Sender(mediator);
 		sender.sendMessage("Message1");
 	}
-
 }
 
 /*

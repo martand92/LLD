@@ -46,9 +46,7 @@ public class _04_01_MediatorPattern_Issue {
  * Issues :
  * 
  * The Sender directly calls the displayMessage method of the Receiver, leading
- * to a tight coupling between these two classes. If additional receivers are
- * introduced, the Sender would need to handle the logic of deciding which
- * receiver to communicate with
+ * to a tight coupling between these two classes.
  * 
  * 
  * Any change in the communication logic (e.g., logging, transformations, or

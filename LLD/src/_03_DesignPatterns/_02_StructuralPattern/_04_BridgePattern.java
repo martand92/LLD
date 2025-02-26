@@ -5,9 +5,9 @@ package _03_DesignPatterns._02_StructuralPattern;
  * No need to create every combination of Abstraction and Implementor. 
  * Need to create 1 hierarchy of high-level Abstraction and 1 hierarchy of low-level Implementor
  * 
- *  Using composition, any combination of abstraction and implementor can be created in runtime
+ * Using composition, any combination of abstraction and implementor can be created in runtime
  *  
- *  Both Abstraction and Implementor can vary independently
+ * Both Abstraction and Implementor can vary independently
  * */
 
 //Abstraction
