@@ -5,8 +5,9 @@ interface Mediator2 {
 	void send(String message, Colleague sender);
 }
 
-//Step 2: Define Abstract Colleague Class
+//Step 2: Define Abstract Colleague/Component Class
 abstract class Colleague {
+
 	protected Mediator2 mediator;
 
 	public Colleague(Mediator2 mediator) {
@@ -18,6 +19,7 @@ abstract class Colleague {
 
 //Step 3: Implement Concrete Colleague Classes
 class ConcreteColleagueA extends Colleague {
+	
 	public ConcreteColleagueA(Mediator2 mediator) {
 		super(mediator);
 	}
