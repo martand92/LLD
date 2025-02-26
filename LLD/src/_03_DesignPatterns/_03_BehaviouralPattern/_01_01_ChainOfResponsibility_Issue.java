@@ -46,18 +46,6 @@ class ErrorLogger1 extends Logger1 {
 
 public class _01_01_ChainOfResponsibility_Issue {
 
-	public static void main(String[] args) {
-		// Individual loggers
-		Logger infoLogger = new InfoLogger(1);
-		Logger debugLogger = new DebugLogger(2);
-		Logger errorLogger = new ErrorLogger(3);
-
-		// Client explicitly decides which logger to call
-		logMessage(1, "This is an Info message", infoLogger, debugLogger, errorLogger);
-		logMessage(2, "This is a Debug message", infoLogger, debugLogger, errorLogger);
-		logMessage(3, "This is an Error message", infoLogger, debugLogger, errorLogger);
-	}
-
 	private static void logMessage(int level, String message, Logger infoLogger, Logger debugLogger,
 			Logger errorLogger) {
 
@@ -70,6 +58,18 @@ public class _01_01_ChainOfResponsibility_Issue {
 		else if (level == errorLogger.level)
 			errorLogger.write(message);
 
+	}
+
+	public static void main(String[] args) {
+		// Individual loggers
+		Logger infoLogger = new InfoLogger(1);
+		Logger debugLogger = new DebugLogger(2);
+		Logger errorLogger = new ErrorLogger(3);
+
+		// Client explicitly decides which logger to call
+		logMessage(1, "This is an Info message", infoLogger, debugLogger, errorLogger);
+		logMessage(2, "This is a Debug message", infoLogger, debugLogger, errorLogger);
+		logMessage(3, "This is an Error message", infoLogger, debugLogger, errorLogger);
 	}
 }
 
