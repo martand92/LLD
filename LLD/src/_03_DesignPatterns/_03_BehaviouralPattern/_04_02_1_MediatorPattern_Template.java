@@ -10,6 +10,7 @@ abstract class Colleague {
 
 	protected Mediator2 mediator;
 
+	// Attach Mediator with Colleague
 	public Colleague(Mediator2 mediator) {
 		this.mediator = mediator;
 	}
@@ -19,7 +20,7 @@ abstract class Colleague {
 
 //Step 3: Implement Concrete Colleague Classes
 class ConcreteColleagueA extends Colleague {
-	
+
 	public ConcreteColleagueA(Mediator2 mediator) {
 		super(mediator);
 	}
@@ -35,6 +36,7 @@ class ConcreteColleagueA extends Colleague {
 }
 
 class ConcreteColleagueB extends Colleague {
+
 	public ConcreteColleagueB(Mediator2 mediator) {
 		super(mediator);
 	}
@@ -52,14 +54,15 @@ class ConcreteColleagueB extends Colleague {
 //Step 4: Implement Concrete Mediator
 class ConcreteMediator implements Mediator2 {
 
-	private ConcreteColleagueA colleagueA;
-	private ConcreteColleagueB colleagueB;
+	private Colleague colleagueA;
+	private Colleague colleagueB;
 
-	public void registerColleagueA(ConcreteColleagueA colleague) {
+	// Register Colleague with Mediator
+	public void registerColleagueA(Colleague colleague) {
 		this.colleagueA = colleague;
 	}
 
-	public void registerColleagueB(ConcreteColleagueB colleague) {
+	public void registerColleagueB(Colleague colleague) {
 		this.colleagueB = colleague;
 	}
 
@@ -77,6 +80,7 @@ class ConcreteMediator implements Mediator2 {
 public class _04_02_1_MediatorPattern_Template {
 
 	public static void main(String[] args) {
+
 		ConcreteMediator mediator = new ConcreteMediator();
 
 		ConcreteColleagueA colleagueA = new ConcreteColleagueA(mediator);
@@ -88,5 +92,4 @@ public class _04_02_1_MediatorPattern_Template {
 		colleagueA.send("Hello from A!");
 		colleagueB.send("Hey A, this is B!");
 	}
-
 }
