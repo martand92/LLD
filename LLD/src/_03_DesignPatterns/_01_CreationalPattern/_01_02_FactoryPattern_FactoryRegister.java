@@ -46,6 +46,8 @@ class WindowsFactory1 implements Factory1 {
 }
 
 //FactoryRegistry. This pattern is known as Simple Factory
+//A Simple Factory is not a true design pattern but rather a programming idiom.
+// If a new type is introduced, the factory class needs modification, violating the Open-Closed Principle.
 class FactoryRegistry {
 
 	public static Factory1 getFactory(String type) {
