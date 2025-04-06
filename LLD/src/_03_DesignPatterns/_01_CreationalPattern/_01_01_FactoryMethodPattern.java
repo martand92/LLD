@@ -22,7 +22,6 @@ class WindowsButton implements Button {
 
 //Sole purpose of factory is to only produce and return concrete objects. Single responsibility principle
 interface Factory {
-	// Factory Method that creates object
 	public Button createButton();
 }
 
@@ -57,8 +56,7 @@ class FactoryImpl implements Factory {
 	}
 }
 
-//Client code
-public class _01_01_FactoryPattern {
+public class _01_01_FactoryMethodPattern {
 
 	public static void main(String[] args) {
 
@@ -66,13 +64,12 @@ public class _01_01_FactoryPattern {
 		// where client in runtime decides which factory to call to get required
 		// concrete obj
 
-		// Also this is Factory Method Pattern where required object by calling create
-		// method of a class
+		// Also this is Factory Method Pattern where required object is created by
+		// calling factory method()
 
 		Factory htmlFactory = new FactoryImpl(new HTMLFactory());
-		Button htmlButton = htmlFactory.createButton(); // Receives concrete obj from respective Factory's call
-		htmlButton.render(); // client once receives required obj using factory will then interact with obj's
-								// methods
+		Button htmlButton = htmlFactory.createButton();
+		htmlButton.render();
 
 		Factory windowsFactory = new FactoryImpl(new WindowsFactory());
 		Button windowsButton = windowsFactory.createButton();
@@ -96,9 +93,11 @@ public class _01_01_FactoryPattern {
  * The client just calls the createButton() method, which is implemented by
  * concrete subclasses of Factory.
  * 
- * The client can work with the Factory interface without needing to know the
- * specific subclass (e.g., HTMLFactory, WindowsFactory).
+ * The client can work with the Factory Abstraction without needing to know the
+ * specific subclass (e.g., HTMLFactory, WindowsFactory). This allows open to
+ * extension
  * 
- * This is Factory Method pattern that has create() to create an instance
- * Concrete Factories extend Factory class and implement create()
+ * Factory pattern is based on inheritance where you have a common interface or
+ * abstract class, and subclasses implement the creation logic
+ * 
  */

@@ -45,8 +45,8 @@ class WindowsFactory1 implements Factory1 {
 	}
 }
 
-//FactoryRegistry. This pattern is known as Simple Factory
-//A Simple Factory is not a true design pattern but rather a programming idiom.
+// FactoryRegistry. This pattern is known as Simple Factory
+// A Simple Factory is not a true design pattern but rather a programming idiom.
 // If a new type is introduced, the factory class needs modification, violating the Open-Closed Principle.
 class FactoryRegistry {
 
@@ -66,12 +66,11 @@ class FactoryRegistry {
 	}
 }
 
-//Client code
-public class _01_02_FactoryPattern_FactoryRegister {
+public class _01_02_FactoryRegisteryPattern {
 
 	public static void main(String[] args) {
 
-		// This conditioned based factory resolution is Simple Factory pattern
+		// This is also Simple Factory pattern
 		// It's anti-pattern cz client should know the condition to create required obj
 		Factory1 htmlFactory = FactoryRegistry.getFactory("HTML");
 		htmlFactory.createButton().render();

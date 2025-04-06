@@ -2,6 +2,7 @@ package _03_DesignPatterns._01_CreationalPattern;
 
 import java.util.Arrays;
 
+// Shallow copy : Where primitive obj are copy by value & non-primitive obj are copy by reference
 class Shape2 implements Cloneable {
 
 	private String type;
@@ -22,7 +23,7 @@ class Shape2 implements Cloneable {
 
 	@Override
 	public Shape2 clone() throws CloneNotSupportedException {
-		return (Shape2) super.clone();
+		return (Shape2) super.clone(); // downcasting
 	}
 
 	@Override
@@ -46,14 +47,15 @@ public class _05_01_PrototypePattern_ShallowCopy {
 
 		// Updating primitive property of Original object wont affect clonedObj
 		circle.setType("Circle1");
-		System.out.println("Original Obj- " + circle);
-		System.out.println("Cloned Obj- " + clonedCircle);// ClonedObj will hold original primitive val
+		System.out.println("After Updating Circle type(primitive) in only Original object");
+		System.out.println("Orginl Obj -> " + circle);
+		System.out.println("Cloned Obj -> " + clonedCircle);// ClonedObj will hold original primitive val
 
 		// Updating non-primitive property of Original object also updates in Cloned Obj
 		circle.arr[0] = 4;
 		System.out.println();
-		System.out.println("After Updating non-primitve type in only Original object");
-		System.out.println("Original Obj- " + circle);
-		System.out.println("Cloned Obj- " + clonedCircle);
+		System.out.println("After Updating arr's element (non-primitive) in only Original object");
+		System.out.println("Orginl Obj -> " + circle);
+		System.out.println("Cloned Obj -> " + clonedCircle);
 	}
 }

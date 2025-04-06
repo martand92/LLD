@@ -18,7 +18,6 @@ class Square1 implements Shape1 {
 	@Override
 	public void draw() {
 		System.out.println("Drawing Square");
-		// Inform ShapeManager about the drawn shape
 		ShapeManager.getInstance().shapeDrawn();
 	}
 }
@@ -26,7 +25,7 @@ class Square1 implements Shape1 {
 //Singleton class
 final class ShapeManager {
 
-	// 1. Private static variable to hold the single instance
+	// Private static variable to hold the single instance
 	private static ShapeManager instance;
 
 	// Private field to track the number of shapes drawn
@@ -55,16 +54,12 @@ public class _03_02_SingletonPattern {
 
 	public static void main(String[] args) {
 
-		// ShapeManager shapeManager = ShapeManager.getInstance();
-
 		Shape1 circle = new Circle1();
 		Shape1 square = new Square1();
 
 		circle.draw();
 		square.draw();
-
 	}
-
 }
 
 /*

@@ -41,7 +41,7 @@ class Car1 {
 	private Vehicle vehicle; // Composition
 
 	public Car1() {
-		this.vehicle = new Vehicle(); // Car has a Vehicle
+		this.vehicle = new Vehicle();
 	}
 
 	public void move() {
@@ -54,7 +54,7 @@ class Car1 {
 	}
 }
 
-public class _01_01_Inheritence_Composition {
+public class _01_01_Inheritance_Composition {
 
 	public static void main(String[] args) {
 
@@ -65,7 +65,7 @@ public class _01_01_Inheritence_Composition {
 
 		Car car = new Car(); // Here car object is created that contains all the instance variables and
 								// methods of Vehicle as it inherits
-		car.move(); // This method is called from car obj created
+		car.move();
 		System.out.println(car.getType()); // If any change to Vehicle class, the same is reflected in Car object as
 											// they get inherited directly. If property or method is added or removed
 											// from Vehicle, the same reflects in Car object as it directly inherits
@@ -161,13 +161,17 @@ public class _01_01_Inheritence_Composition {
  * changes in the parent class; it only delegates actions to the contained
  * `Vehicle` object.
  * 
- * ### **Summary** - **Inheritance (`Car`)**: The `Car` class inherits the
- * `type` field from `Vehicle`, so changes to `Vehicle` will automatically
- * reflect in `Car` objects. - **Composition (`Car1`)**: The `Car1` class
- * contains an instance of `Vehicle`, and it delegates some actions to this
- * instance. However, changes to the `Vehicle` class (or an external change to
- * the `vehicle` instance) do not automatically propagate unless the `Vehicle`
- * instance itself is updated or replaced.
+ * ### **Summary** -
+ * 
+ * **Inheritance (`Car`)**: The `Car` class inherits the `type` field from
+ * `Vehicle`, so changes to `Vehicle` will automatically reflect in `Car`
+ * objects.
+ * 
+ * **Composition (`Car1`)**: The `Car1` class contains an instance of `Vehicle`,
+ * and it delegates some actions to this instance. However, changes to the
+ * `Vehicle` class (or an external change to the `vehicle` instance) do not
+ * automatically propagate unless the `Vehicle` instance itself is updated or
+ * replaced.
  * 
  * To preserve the `type` field independently of any changes in the parent class
  * (`Vehicle`), you would need to manage the state of `type` within `Car1`

@@ -39,7 +39,7 @@ class Cat2 implements Whisper {
 	}
 }
 
-public class _04_02_AvoidDownCasting {
+public class _04_02_AvoidDownCasting_Inheritance {
 
 	public static void main(String[] args) {
 

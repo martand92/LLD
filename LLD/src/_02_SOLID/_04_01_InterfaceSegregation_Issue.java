@@ -10,6 +10,7 @@ interface RestaurantEmployee {
 	void cookFood();
 }
 
+//as child is not obeying parent, this is also violating Liskov substitution principle
 class Waiter implements RestaurantEmployee {
 
 	@Override

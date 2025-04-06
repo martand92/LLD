@@ -1,6 +1,6 @@
 package _02_SOLID;
 
-/*Principle : Subclass object should be able to replace Parent Class object without breaking behavior of the program
+/* Principle : Subclass object should be able to replace Parent Class object without breaking behavior of the program
  * Subclass should extend behavior of super class and shouldn't narrow it
  * Child should behave like parent */
 

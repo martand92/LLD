@@ -49,7 +49,6 @@ public class _03_01_SingletonPattern {
 
 	public static void main(String[] args) {
 
-		// Get the single instance of Singleton
 		Singleton singleton = Singleton.getInstance();
 
 		Shape circle = new Circle();
