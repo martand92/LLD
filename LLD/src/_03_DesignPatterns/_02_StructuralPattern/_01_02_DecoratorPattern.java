@@ -19,7 +19,7 @@ class Espresso extends Beverage {
 }
 
 /*
- * Decorator is extension of base class type. This ensures that the decorator
+ * Decorator is added to abstraction. This ensures that the decorator
  * and the base object are interchangeable, adhering to the Liskov Substitution
  * Principle
  */
@@ -66,11 +66,11 @@ public class _01_02_DecoratorPattern {
 		Beverage espresso = new Espresso("Espresso");
 		System.out.println(espresso.name + " costs " + espresso.getCost());
 
-		// Decorating over base obj
-		Beverage mocha = new Mocha(espresso); // Creating new decorated obj of type Beverage by passing original obj
+		// Decorating base obj (espresso)
+		Beverage mocha = new Mocha(espresso); // Decorating espresso to form Mocha
 		System.out.println(mocha.name + " costs " + mocha.getCost());
 
-		// Adding decoration over above decorator
+		// Decorating already available decorator(Mocha)
 		Beverage xyz = new XYZ(mocha);
 		System.out.println(xyz.name + " costs " + xyz.getCost());
 

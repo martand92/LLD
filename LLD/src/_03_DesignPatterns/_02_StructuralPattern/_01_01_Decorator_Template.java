@@ -11,7 +11,7 @@ class ConcreteComponent implements Component1 {
 	}
 }
 
-//Decorator extends the same type
+//Decorator that decorates / wraps  base object using composition
 class Decorator implements Component1 {
 	protected Component1 component; // Holds reference to the base object
 
@@ -21,20 +21,20 @@ class Decorator implements Component1 {
 
 	@Override
 	public void operation() {
-		component.operation(); // Delegation
+		component.operation(); // Delegating to base object method
 	}
 }
 
-//Concrete decorator adds behavior
-class ConcreteDecorator extends Decorator {
+//Second Decorator that decorates / wraps inner decorator using composition
+class SecondDecorator extends Decorator {
 
-	public ConcreteDecorator(Component1 component) {
-		super(component);
+	public SecondDecorator(Component1 component) {
+		super(component);//Calling inner decorator constructor
 	}
 
 	@Override
 	public void operation() {
-		super.operation(); // Delegate to base
+		super.operation(); // Delegate call to inner decorator which calls object's method 
 		System.out.println("Extra behavior added by decorator");
 	}
 }
@@ -42,7 +42,7 @@ class ConcreteDecorator extends Decorator {
 public class _01_01_Decorator_Template {
 
 	public static void main(String[] args) {
-		Component1 decorated = new ConcreteDecorator(new ConcreteComponent());
+		Component1 decorated = new SecondDecorator(new ConcreteComponent());
 		decorated.operation();
 	}
 }

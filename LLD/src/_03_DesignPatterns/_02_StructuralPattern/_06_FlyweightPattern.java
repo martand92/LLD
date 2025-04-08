@@ -17,12 +17,15 @@ class Ball implements Game {
 		this.color = color;
 	}
 
-	public void setSize(int size) {
+	public Ball setSize(int size) {
 		this.size = size;
+		return this;
 	}
 
-	public void setCoordinates(String coordinates) {
+	public Ball setCoordinates(String coordinates) {
 		this.coordinates = coordinates;
+		return this;
+
 	}
 
 	@Override
@@ -56,16 +59,14 @@ public class _06_FlyweightPattern {
 	public static void main(String[] args) {
 
 		// Flyweight object. Receive required ball from factory if present else create
-		// and add to factory
+		// new ball, add it to factory & return
 		Ball greenBall = BallFactory.getBall("Green"); // Client is required to specify intrinsic properties
-		greenBall.setSize(5);// then add additional properties to received ball
-		greenBall.setCoordinates("x=4, y=5");
-		greenBall.build();
+
+		// then add additional properties to received ball
+		greenBall.setSize(5).setCoordinates("x=4, y=5").build();
 
 		Ball purpleBall = BallFactory.getBall("Purple");
-		purpleBall.setSize(10);
-		purpleBall.setCoordinates("x=2, y=3");
-		purpleBall.build();
+		purpleBall.setSize(10).setCoordinates("x=2, y=3").build();
 
 		// Now if you want another greenBall, it wont create new green ball object but
 		// returns from the cached

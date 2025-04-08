@@ -73,9 +73,9 @@ public class _03_02_AdapterPattern_Composition {
 /*
  * Advantages :
  * 
- * Can work with different adaptees. Cz of compostion, can inject any adaptee
+ * Can work with different adaptees. Cz of composition, can inject any adaptee
  * 
- * Supports multiple adaptees : Cz of
+ * Supports multiple adaptees : multiple adaptees can be passed as array
  * 
  * Loose coupling : Any adaptee can be injected as adapter has composition for
  * parent

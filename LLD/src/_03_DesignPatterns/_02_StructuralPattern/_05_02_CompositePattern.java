@@ -36,6 +36,8 @@ class Directory implements FileComponent {
 		files.remove(file);
 	}
 
+	// This operation on Composite objects will continue until they are unwrapped
+	// upto leaf components
 	@Override
 	public void showDetails() {
 		for (FileComponent file : files) {

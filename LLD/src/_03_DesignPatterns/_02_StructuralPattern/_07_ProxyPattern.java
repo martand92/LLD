@@ -15,8 +15,7 @@ class Circle1 implements Shape {
 
 class Proxy implements Shape {
 
-	static Shape circle; // if same object need to be shared across multiple proxies then make this
-							// object static
+	static Shape circle; // if this obj need to be shared across multiple proxies then make it static
 	String key;
 
 	Proxy(String key) {
@@ -52,7 +51,8 @@ public class _07_ProxyPattern {
 		proxy.draw();// same Circle obj initially created will be used in multiple proxy calls
 
 		Shape proxy1 = new Proxy("key");
-		proxy1.draw();// As new proxy instance is created, it creates its own new Circle obj.
+		proxy1.draw();// Even though new proxy object is created as circle is declared as static, it
+						// doesn't create a new circle obj
 
 	}
 }
