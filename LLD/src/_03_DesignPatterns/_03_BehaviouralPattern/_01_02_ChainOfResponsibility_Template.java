@@ -70,13 +70,13 @@ public class _01_02_ChainOfResponsibility_Template {
 		// Send request always to 1st handler, if it processes then stops else passes
 		// request to next handler
 
-		// Sending request to process by 1st handler
+		// Sending request to 1st handler to be processed by 1st handler
 		handler1.handleRequest("1");
 
-		// Sending request to process by 2nd handler
+		// Sending request to 1st handler to be processed by 2nd handler 
 		handler1.handleRequest("2");
 
-		// Sending request to that couldn't be processed by any handler
+		// Sending request to 1st handler that couldn't be processed by any handler
 		handler1.handleRequest("3");
 
 	}

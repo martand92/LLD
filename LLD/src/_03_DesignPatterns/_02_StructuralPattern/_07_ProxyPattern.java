@@ -13,12 +13,12 @@ class Circle1 implements Shape {
 	}
 }
 
-class Proxy implements Shape {
+class CircleProxy implements Shape {
 
 	static Shape circle; // if this obj need to be shared across multiple proxies then make it static
 	String key;
 
-	Proxy(String key) {
+	CircleProxy(String key) {
 		this.key = key;
 	}
 
@@ -42,17 +42,20 @@ class Proxy implements Shape {
 	}
 }
 
+//With factory essentially you are only providing proxy circle object and hiding actual circle object
+class ShapeFactory {
+	public static Shape getCircle(String key) {
+		return new CircleProxy(key);
+	}
+}
+
 public class _07_ProxyPattern {
 
 	public static void main(String[] args) throws Exception {
-
-		Shape proxy = new Proxy("key");
-		proxy.draw();
-		proxy.draw();// same Circle obj initially created will be used in multiple proxy calls
-
-		Shape proxy1 = new Proxy("key");
-		proxy1.draw();// Even though new proxy object is created as circle is declared as static, it
-						// doesn't create a new circle obj
-
+		// for clients though it seems like they are interacting with real circle obj,
+		// they are essentially with only proxy circle obj
+		Shape circle = ShapeFactory.getCircle("secret");
+		circle.draw();
+		circle.draw();// same Circle obj initially created will be used in multiple proxy calls
 	}
 }

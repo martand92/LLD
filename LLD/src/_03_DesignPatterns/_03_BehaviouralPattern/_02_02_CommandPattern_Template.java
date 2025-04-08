@@ -100,8 +100,8 @@ class Invoker {
 }
 
 /*
- * Client invokes invoker -> Invoker attaches command -> and command
- * execute/unexecute request on receiver
+ * Client invokes invoker -> Invoker stitches intended command & receiver ->
+ * invoker executes command on intended receiver
  */
 
 public class _02_02_CommandPattern_Template {
