@@ -40,6 +40,7 @@ class CustomIterator<T> implements Iterator<T> {
 
 	@Override
 	public boolean hasNext() {
+		// add custom logic to check if next obj is available
 		return index < items.size();
 	}
 
@@ -65,3 +66,8 @@ public class _05_01_IteratorPattern {
 			System.out.println(iterator.next());
 	}
 }
+
+// How iterable / iterator really helps?
+// Collection need not be just list with random type, but can be any collection of any data structure
+// With plain list while iterating, you cannot control flow (Ex: forward, backward, pause, resume) but wrapping with iterator you can
+// you can define custom filtering logic while iterating to list only filtered objects

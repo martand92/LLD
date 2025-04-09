@@ -3,8 +3,10 @@ package _03_DesignPatterns._03_BehaviouralPattern;
 //Step 1: Define an Abstract Class with a Template Method
 abstract class AbstractTemplate {
 
-	// Template method defining the structure of the algorithm
+	// Template method defining the structure and execution order of the algorithm
 	public final void templateMethod() {
+
+		// hook methods
 		stepOne();
 		stepTwo();
 		stepThree();
@@ -62,3 +64,16 @@ public class _09_01_TemplatePattern_Template {
 	}
 
 }
+
+//Difference between normal abstraction & subclassing vs Template pattern
+
+/*
+ * With basic inheritance : You define a base class with some methods, and
+ * subclasses override whatever they need. There's no strict control over the
+ * sequence of method execution.
+ * 
+ * 
+ * Template Method Pattern : You define the structure/algorithm in the base
+ * class using a method (called the template method) that calls other abstract
+ * or hook methods. Subclasses can only change parts, not the overall flow
+ */

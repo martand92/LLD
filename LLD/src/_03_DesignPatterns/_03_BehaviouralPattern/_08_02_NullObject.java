@@ -43,6 +43,7 @@ class _08_02_NullObject {
 		Animal1 myAnimal2 = AnimalFactory.getAnimal("cat"); // Not found, returns NullAnimal
 
 		myAnimal1.makeSound(); // Output: Woof!
-		myAnimal2.makeSound(); // Output: No sound... it's a null animal.
+		myAnimal2.makeSound(); // No need to explicitly check if the object is null and handle as null custom
+								// object is returned
 	}
 }
