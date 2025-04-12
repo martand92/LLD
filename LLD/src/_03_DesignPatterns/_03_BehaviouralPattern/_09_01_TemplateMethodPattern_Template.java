@@ -5,7 +5,6 @@ abstract class AbstractTemplate {
 
 	// Template method defining the structure and execution order of the algorithm
 	public final void templateMethod() {
-
 		// hook methods
 		stepOne();
 		stepTwo();
@@ -50,7 +49,7 @@ class ConcreteClassB extends AbstractTemplate {
 }
 
 //Step 4: Client Code Using the Template Method
-public class _09_01_TemplatePattern_Template {
+public class _09_01_TemplateMethodPattern_Template {
 
 	public static void main(String[] args) {
 		AbstractTemplate obj1 = new ConcreteClassA();

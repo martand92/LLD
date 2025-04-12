@@ -40,10 +40,11 @@ class _08_02_NullObject {
 
 	public static void main(String[] args) {
 		Animal1 myAnimal1 = AnimalFactory.getAnimal("dog");
-		Animal1 myAnimal2 = AnimalFactory.getAnimal("cat"); // Not found, returns NullAnimal
+		Animal1 myAnimal2 = AnimalFactory.getAnimal("cat"); // here you will not receive null object instead of null
+															// from factory
 
 		myAnimal1.makeSound(); // Output: Woof!
-		myAnimal2.makeSound(); // No need to explicitly check if the object is null and handle as null custom
-								// object is returned
+		myAnimal2.makeSound(); // No need to explicitly check if the object myAnimal2 is null cz factory
+								// returned an null-object, not null
 	}
 }

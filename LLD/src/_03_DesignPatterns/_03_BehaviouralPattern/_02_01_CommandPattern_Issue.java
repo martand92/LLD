@@ -79,3 +79,12 @@ public class _02_01_CommandPattern_Issue {
  * No Encapsulation of Requests makes it harder to queue, log, or execute
  * actions in a flexible way
  */
+
+/*
+ * Here issue resembles bridge pattern where Remote and Device are still loosely
+ * coupled with composition but both are still aware of each other. Goal of
+ * Bridge is to evolve independently
+ * 
+ * But what we want is invoker to not know anything about receiver. Invoker
+ * should talk to middleware which then communicates with intended receiver
+ */

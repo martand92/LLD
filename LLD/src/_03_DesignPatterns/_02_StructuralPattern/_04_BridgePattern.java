@@ -2,6 +2,8 @@ package _03_DesignPatterns._02_StructuralPattern;
 
 /* With Bridge pattern :
  * 
+ * Your application wants to needs to work with multiple implementations of a component 
+ * 
  * No need to create every combination of Abstraction and Implementor. 
  * Need to create 1 hierarchy of high-level Abstraction and 1 hierarchy of low-level Implementor
  * 
@@ -67,6 +69,6 @@ public class _04_BridgePattern {
 
 /*
  * Here, you can create different types of remote (e.g., RadioRemote, ACRemote)
- * that can control different types of devices (e.g., Radio, AC) without
- * modifying the Remote class itself.
+ * that can control respective devices (e.g., RadioRemote controls Radio). You
+ * can attach required implementor in runtime to Abstractor
  */

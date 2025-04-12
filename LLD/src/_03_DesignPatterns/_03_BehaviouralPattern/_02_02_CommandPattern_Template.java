@@ -137,7 +137,7 @@ public class _02_02_CommandPattern_Template {
 
 /*
  * Encapsulates the request – Commands wrap requests (Ex: TurnOnCommand,
- * TurnOffCommand).
+ * TurnOffCommand) and receiver
  * 
  * Decouples sender from receiver – Invoker doesn’t know about Receiver, it only
  * calls Command's execute() / unexecute().
