@@ -60,7 +60,7 @@ class StudentAdapter1 extends SchoolStudent1 implements Student1 {
 	}
 }
 
-public class _03_01_AdapterPattern_Inheritence {
+public class _03_01_AdapterPattern_Inheritance {
 
 	public static void main(String[] args) {
 		// Adapt Old class as per new Adapter interface

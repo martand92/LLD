@@ -9,7 +9,6 @@ class HTMLButton0 implements Button0 {
 	public void render() {
 		System.out.println("Rendering HTML Button");
 	}
-
 }
 
 class WindowsButton0 implements Button0 {
@@ -17,24 +16,23 @@ class WindowsButton0 implements Button0 {
 	public void render() {
 		System.out.println("Rendering Windows Button");
 	}
-
 }
 
-class FactoryImpl1 {
+class ButtonFactory1 {
 
 	public static Button0 getButton(String type) {
-		if (type == "HTML") {
+
+		if (type == "HTML")
 			return new HTMLButton0();
-		} else
+		else
 			return new WindowsButton0();
 	}
 }
 
-public class _01_00_SimpleFactoryPattern {
+public class _01_00_SimpleFactoryPattern_Centralized {
 
 	public static void main(String[] args) {
-
-		Button0 htmlButton = FactoryImpl1.getButton("HTML");
+		Button0 htmlButton = ButtonFactory1.getButton("HTML");
 		htmlButton.render();
 	}
 }

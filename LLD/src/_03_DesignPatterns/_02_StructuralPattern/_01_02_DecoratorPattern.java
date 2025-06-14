@@ -19,8 +19,8 @@ class Espresso extends Beverage {
 }
 
 /*
- * Decorator is added to abstraction. This ensures that the decorator
- * and the base object are interchangeable, adhering to the Liskov Substitution
+ * Decorator is added to abstraction. This ensures that the decorator and the
+ * base object are interchangeable, adhering to the Liskov Substitution
  * Principle
  */
 abstract class BeverageDecorator extends Beverage {
@@ -73,7 +73,5 @@ public class _01_02_DecoratorPattern {
 		// Decorating already available decorator(Mocha)
 		Beverage xyz = new XYZ(mocha);
 		System.out.println(xyz.name + " costs " + xyz.getCost());
-
-		System.out.println(espresso.name);
 	}
 }

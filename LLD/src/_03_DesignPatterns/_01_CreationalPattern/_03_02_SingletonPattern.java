@@ -29,8 +29,7 @@ final class ShapeManager {
 	private static ShapeManager instance;
 
 	// Private field to track the number of shapes drawn
-	private int shapeCount = 0;// shapeCount shouldn't be static else it would then be accessed using Class ref
-								// and singleton by default provides single instance
+	private int shapeCount = 0;
 
 	private ShapeManager() {
 	}

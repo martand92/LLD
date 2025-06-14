@@ -85,11 +85,11 @@ class User2 {
 	}
 }
 
-interface UserFactrory {
+interface UserFactory {
 	public User2 createUser();
 }
 
-class RegularUserFactory implements UserFactrory {
+class RegularUserFactory implements UserFactory {
 
 	@Override
 	public User2 createUser() {
@@ -97,7 +97,7 @@ class RegularUserFactory implements UserFactrory {
 	}
 }
 
-class AdminUserFactory implements UserFactrory {
+class AdminUserFactory implements UserFactory {
 
 	@Override
 	public User2 createUser() {
@@ -109,10 +109,10 @@ public class _04_03_Builder_Factory_Pattern {
 
 	public static void main(String[] args) {
 
-		UserFactrory regularUserFactory = new RegularUserFactory();
+		UserFactory regularUserFactory = new RegularUserFactory();
 		System.out.println(regularUserFactory.createUser());
 
-		UserFactrory adminUserfactory = new AdminUserFactory();
+		UserFactory adminUserfactory = new AdminUserFactory();
 		System.out.println(adminUserfactory.createUser());
 
 	}

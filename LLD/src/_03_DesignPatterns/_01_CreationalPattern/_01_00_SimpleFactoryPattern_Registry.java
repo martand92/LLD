@@ -66,7 +66,7 @@ class FactoryRegistry {
 	}
 }
 
-public class _01_02_FactoryRegisteryPattern {
+public class _01_00_SimpleFactoryPattern_Registry {
 
 	public static void main(String[] args) {
 
