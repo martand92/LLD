@@ -12,7 +12,7 @@ class Ball implements Game {
 	int size;
 	String coordinates;
 
-	// Only intrinsic properties are added to construction
+	// Only intrinsic properties are added to constructor
 	Ball(String color) {
 		this.color = color;
 	}
@@ -43,11 +43,9 @@ class BallFactory {
 	// Create balls with required colors and cache them, if already present then
 	// return. No new objects are created
 	public static Ball getBall(String color) {
-
-		if (ballMap.get(color) != null)
-			System.out.println("Already present");
-
-		else
+		
+		//this ensures no duplicate instance of same obj is created, hence no 2 objects exist with same color 
+		if (!ballMap.containsKey(color))
 			ballMap.put(color, new Ball(color));
 
 		return ballMap.get(color);

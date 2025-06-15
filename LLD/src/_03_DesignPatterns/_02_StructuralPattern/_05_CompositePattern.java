@@ -46,7 +46,7 @@ class Directory implements FileComponent {
 	}
 }
 
-public class _05_02_CompositePattern {
+public class _05_CompositePattern {
 
 	public static void main(String[] args) {
 
