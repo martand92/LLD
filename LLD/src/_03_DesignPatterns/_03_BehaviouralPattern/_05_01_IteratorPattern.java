@@ -9,26 +9,7 @@ interface Iterator<T> {
 	T next();
 }
 
-//Step 2 : Define Iterable Collection Interface
-interface IterableCollection<T> {
-	Iterator<T> getIterator();
-}
-
-//Step 3 : Create concrete Iterable collection
-class CustomCollection<T> implements IterableCollection<T> {
-	private List<T> items = new ArrayList<>();// Iterable holds collection of objects(can be of same or different type)
-
-	public void addItem(T item) {
-		items.add(item);
-	}
-
-	@Override
-	public Iterator<T> getIterator() {
-		return new CustomIterator<T>(items);
-	}
-}
-
-//Step 4: Concrete Iterator Implementation
+//Step 2: Concrete Iterator Implementation
 class CustomIterator<T> implements Iterator<T> {
 
 	List<T> items;
@@ -47,6 +28,25 @@ class CustomIterator<T> implements Iterator<T> {
 	@Override
 	public T next() {
 		return hasNext() ? items.get(index++) : null;
+	}
+}
+
+//Step 3 : Define Iterable Collection Interface
+interface IterableCollection<T> {
+	Iterator<T> getIterator();
+}
+
+//Step 4 : Create concrete Iterable collection
+class CustomCollection<T> implements IterableCollection<T> {
+	private List<T> items = new ArrayList<>();// Iterable holds collection of objects(can be of same or different type)
+
+	public void addItem(T item) {
+		items.add(item);
+	}
+
+	@Override
+	public Iterator<T> getIterator() {
+		return new CustomIterator<T>(items);
 	}
 }
 
